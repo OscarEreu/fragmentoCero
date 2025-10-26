@@ -3,29 +3,37 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class BallController : MonoBehaviour
 {
-    [Header("Estado físico")]
+    [Header("Estado fisico")]
     public Vector2 velocity = Vector2.zero;
     public float radius = 0.16f;
 
-    [Header("Parámetros")]
-    public float speedClampMax = 12f;
-    public float speedClampMin = 0.5f;
+    [Header("Parametros")]
+    public float speedClampMax = 14f;
+    public float speedClampMin = 2f;
     public bool launched = false;
 
-    [Header("Refs")]
+    [Header("Referencias")]
     public Transform paddleTransform;
     public Vector2 launchOffset = new Vector2(0f, 0.4f);
+
+    SpriteRenderer sr;
+
+    void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
         if (!launched)
         {
-            // Sigue la paleta hasta lanzar
+            // Sigue la paleta hasta que se lance
             transform.position = (Vector2)paddleTransform.position + launchOffset;
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 launched = true;
-                velocity = new Vector2(2.5f, 7f); // valor inicial ajustable
+                velocity = new Vector2(2.5f, 7f); // velocidad inicial
             }
         }
     }
@@ -35,12 +43,12 @@ public class BallController : MonoBehaviour
         if (!launched) return;
 
         float dt = Time.fixedDeltaTime;
-        transform.position = (Vector2)transform.position + velocity * dt;
-
-        // Paredes / Techo
-        Rect wb = CameraBounds();
         Vector2 pos = transform.position;
+        pos += velocity * dt;
 
+        Rect wb = CameraBounds();
+
+        // Rebote en las paredes
         if (pos.x - radius < wb.xMin)
         {
             pos.x = wb.xMin + radius;
@@ -52,32 +60,42 @@ public class BallController : MonoBehaviour
             velocity.x = -velocity.x;
         }
 
+        // Rebote en el techo
         if (pos.y + radius > wb.yMax)
         {
             pos.y = wb.yMax - radius;
             velocity.y = -velocity.y;
         }
 
+        // Si cae por debajo de la camara, se reinicia
+        if (pos.y < wb.yMin - 1f)
+        {
+            launched = false;
+            velocity = Vector2.zero;
+        }
+
         transform.position = pos;
 
-        // Limitar velocidad
+        // Controlar la velocidad para evitar que se dispare o se detenga
         float s = velocity.magnitude;
-        if (s > speedClampMax) velocity = velocity.normalized * speedClampMax;
-        if (s < speedClampMin) velocity = velocity.normalized * speedClampMin;
+        if (s > speedClampMax)
+            velocity = velocity.normalized * speedClampMax;
+        else if (s < speedClampMin)
+            velocity = velocity.normalized * speedClampMin;
     }
 
     public void ResolveCollision(Vector2 contactNormal, float restitution, Vector2 contactPoint, float penetration)
     {
-        // Sacar la bola de la penetración
+        // Corrige la posicion
         transform.position = (Vector2)transform.position + contactNormal * penetration;
 
-        // Reflejar la velocidad
+        // Refleja la velocidad segun el angulo de impacto
         velocity = velocity - 2f * Vector2.Dot(velocity, contactNormal) * contactNormal;
 
-        // Aplicar restitución (bounciness)
+        // Aplica rebote segun restitucion
         velocity *= restitution;
 
-        // Evitar que la bola se "pegue" a la superficie
+        // Pequena correccion para evitar "pegado"
         if (Mathf.Abs(Vector2.Dot(velocity.normalized, contactNormal)) < 0.01f)
             velocity += contactNormal * 0.1f;
     }
@@ -95,5 +113,11 @@ public class BallController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    // Metodo extra para efectos especiales de bloques (Morado, etc.)
+    public void ApplyExtraForce(Vector2 direction, float amount)
+    {
+        velocity += direction.normalized * amount;
     }
 }

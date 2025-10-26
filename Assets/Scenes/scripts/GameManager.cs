@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             {
                 Vector2 normal = dist > 0.0001f ? diff.normalized : Vector2.up;
                 float penetration = r - dist;
-                ball.ResolveCollision(normal, b.bounciness, closest, penetration);
+                ball.ResolveCollision(normal, b.restitution, closest, penetration);
                 b.OnHit(ball);
             }
         }
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
             if (lives <= 0)
             {
                 Debug.Log("Game Over");
-                // Aquí puedes cargar menú o reiniciar
+                // Aquï¿½ puedes cargar menï¿½ o reiniciar
             }
         }
     }
