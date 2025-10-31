@@ -1,38 +1,63 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Refs")]
+    [Header("References")]
     public BallController ball;
     public PaddleController paddle;
     public List<Block> allBlocks = new List<Block>();
 
-    [Header("UI")]
-    public Text scoreText;
-    public Text livesText;
+    [Header("UI (TextMeshPro)")]
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI livesText;
+    public TextMeshProUGUI timerText;
 
-    [Header("Game")]
+    [Header("Game Settings")]
     public int score = 0;
-    public int lives = 3;
+    public int lives = 5;
+    public float levelDuration = 180f; // 3 minutes = 180 seconds
 
-    void Awake() { Instance = this; }
+    private float timeRemaining;
+    private bool levelActive = true;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
+        timeRemaining = levelDuration;
         UpdateUI();
     }
 
     void FixedUpdate()
     {
+        if (!levelActive) return;
         if (ball == null || paddle == null) return;
 
         CheckBallPaddleCollision();
         CheckBallBlocksCollision();
         CheckBallOutOfBounds();
+    }
+
+    void Update()
+    {
+        if (!levelActive) return;
+
+        // Timer
+        timeRemaining -= Time.deltaTime;
+        if (timeRemaining <= 0)
+        {
+            timeRemaining = 0;
+            LevelEnd();
+        }
+
+        UpdateTimerUI();
     }
 
     void CheckBallPaddleCollision()
@@ -95,15 +120,16 @@ public class GameManager : MonoBehaviour
         {
             lives--;
             UpdateUI();
-            // Reset bola y no lanzada
+
+            // Reset ball and paddle
             ball.launched = false;
             ball.velocity = Vector2.zero;
             ball.transform.position = paddle.transform.position + (Vector3)ball.launchOffset;
 
             if (lives <= 0)
             {
-                Debug.Log("Game Over");
-                // Aqu� puedes cargar men� o reiniciar
+                Debug.Log("GAME OVER");
+                LevelEnd();
             }
         }
     }
@@ -118,13 +144,29 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText) scoreText.text = "Score: " + score;
         if (livesText) livesText.text = "Lives: " + lives;
+        UpdateTimerUI();
+    }
+
+    void UpdateTimerUI()
+    {
+        if (timerText)
+        {
+            int minutes = Mathf.FloorToInt(timeRemaining / 60f);
+            int seconds = Mathf.FloorToInt(timeRemaining % 60f);
+            timerText.text = $"Time: {minutes:00}:{seconds:00}";
+        }
+    }
+
+    void LevelEnd()
+    {
+        levelActive = false;
+        Debug.Log("Level finished or time over");
+        // You can load another scene or show a panel here
     }
 
     public void OnPowerupCollected(Powerup p)
     {
-        // Implementa efectos de powerup (ej: +1 vida, expand paddle, etc)
-        Debug.Log("Powerup recogido");
-        // Ejemplo: +100 puntos
+        Debug.Log("Powerup collected");
         AddScore(100);
     }
 }
