@@ -3,14 +3,25 @@ using UnityEngine;
 public class PaddleController : MonoBehaviour
 {
     public float speed = 10f;
-    public float limit = 4.5f; // distancia máxima en X
     public Transform ballAttach; // referencia para posicionar la bola al inicio
+
+    private float limit;
+
+    void Start()
+    {
+        // Calcula automáticamente el límite visible de la cámara
+        float halfPaddleWidth = GetComponent<SpriteRenderer>().bounds.size.x / 2f;
+        float screenHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
+        limit = screenHalfWidth - halfPaddleWidth;
+    }
 
     void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");
         Vector3 pos = transform.position;
         pos.x += h * speed * Time.deltaTime;
+
+        // Limita el movimiento para que no se salga de la pantalla
         pos.x = Mathf.Clamp(pos.x, -limit, limit);
         transform.position = pos;
     }
