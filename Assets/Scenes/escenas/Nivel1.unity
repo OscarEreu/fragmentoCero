@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleController
   speed: 10
-  limit: 4.5
   ballAttach: {fileID: 0}
 --- !u!212 &9195751
 SpriteRenderer:
@@ -198,7 +197,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6b14a90c144600a42befd5d60e5f6468, type: 3}
   m_Color: {r: 0, g: 0.29254842, b: 1, a: 1}
   m_FlipX: 0
@@ -219,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 9195749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.79, z: 0}
+  m_LocalPosition: {x: 0, y: -4.1, z: 0}
   m_LocalScale: {x: 0.9788404, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2021,10 +2020,12 @@ MonoBehaviour:
   ball: {fileID: 79676363}
   paddle: {fileID: 9195750}
   allBlocks: []
-  scoreText: {fileID: 1332214736}
-  livesText: {fileID: 1025739592}
+  scoreText: {fileID: 0}
+  livesText: {fileID: 0}
+  timerText: {fileID: 0}
   score: 0
   lives: 3
+  levelDuration: 180
 --- !u!4 &920906382
 Transform:
   m_ObjectHideFlags: 0
@@ -4586,7 +4587,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3470725747260773606, guid: da870756cc7d40c44824e536fc348986, type: 3}
   m_Color: {r: 0.91302955, g: 0.93962264, b: 0.9241882, a: 1}
   m_FlipX: 0
