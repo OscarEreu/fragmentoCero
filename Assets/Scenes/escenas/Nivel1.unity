@@ -2296,7 +2296,7 @@ MonoBehaviour:
   livesText: {fileID: 747444459}
   timerText: {fileID: 359381100}
   score: 0
-  lives: 3
+  lives: 5
   levelDuration: 180
 --- !u!4 &920906382
 Transform:
