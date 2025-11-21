@@ -153,6 +153,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &14935051
@@ -262,6 +263,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &71055462
@@ -371,6 +373,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &83696019
@@ -480,6 +483,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &104834098
@@ -589,6 +593,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &122801733
@@ -698,6 +703,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &148323687
@@ -807,6 +813,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &151054509
@@ -1015,12 +1022,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1836d5edfa1d5ff4a860cdda4f79106f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  ball: {fileID: 0}
-  paddle: {fileID: 0}
+  ball: {fileID: 1054155293}
+  paddle: {fileID: 2125982287}
   allBlocks: []
-  scoreText: {fileID: 0}
-  livesText: {fileID: 0}
-  timerText: {fileID: 0}
+  scoreText: {fileID: 217092959}
+  livesText: {fileID: 1177655417}
+  timerText: {fileID: 1799640884}
   score: 0
   lives: 5
   levelDuration: 180
@@ -1073,6 +1080,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &184925453
@@ -1182,6 +1190,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &185026972
@@ -1291,6 +1300,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &185053493
@@ -1400,6 +1410,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &187246899
@@ -1509,6 +1520,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &208166584
@@ -1754,6 +1766,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &258275936
@@ -1863,6 +1876,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &305587471
@@ -1972,6 +1986,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &395062962
@@ -2081,6 +2096,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &406244475
@@ -2190,6 +2206,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &412576432
@@ -2299,6 +2316,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &426196256
@@ -2408,6 +2426,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &459186248
@@ -2517,6 +2536,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &505156266
@@ -2626,6 +2646,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &514589542
@@ -2735,6 +2756,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &576673503
@@ -2844,6 +2866,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &579771201
@@ -2953,6 +2976,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &580012076
@@ -3062,6 +3086,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &584226423
@@ -3250,6 +3275,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &600434947
@@ -3359,6 +3385,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &601705869
@@ -3468,6 +3495,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &602665312
@@ -3577,6 +3605,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &639388001
@@ -3686,6 +3715,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &647748713
@@ -3795,6 +3825,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &653251402
@@ -3904,6 +3935,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &695579722
@@ -4013,6 +4045,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &738596416
@@ -4122,6 +4155,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &739673475
@@ -4231,6 +4265,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &773600403
@@ -4340,6 +4375,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &819344862
@@ -4449,6 +4485,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &844464207
@@ -4558,6 +4595,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &873585401
@@ -4667,6 +4705,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &911226816
@@ -4776,6 +4815,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &916324394
@@ -4885,6 +4925,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &928304512
@@ -4994,6 +5035,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &990163295
@@ -5103,6 +5145,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &991070901
@@ -5212,6 +5255,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &1031657953
@@ -5321,6 +5365,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1037230882
@@ -5430,6 +5475,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1046442061
@@ -5649,6 +5695,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1074849737
@@ -5758,6 +5805,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1088140224
@@ -5867,6 +5915,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1095879469
@@ -5976,6 +6025,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1115488732
@@ -6085,6 +6135,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1120012257
@@ -6330,6 +6381,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1240513114
@@ -6439,6 +6491,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &1252053473
@@ -6775,6 +6828,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1369711615
@@ -6884,6 +6938,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &1381194557
@@ -6993,6 +7048,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1392258388
@@ -7102,6 +7158,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &1432299019
@@ -7211,6 +7268,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1445242789
@@ -7320,6 +7378,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1450425292
@@ -7429,6 +7488,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &1483159822
@@ -7538,6 +7598,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1488083147
@@ -7647,6 +7708,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &1489161795
@@ -7756,6 +7818,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1510058717
@@ -7865,6 +7928,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1511201256
@@ -7974,6 +8038,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1526362634
@@ -8083,6 +8148,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1576107253
@@ -8192,6 +8258,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1582469673
@@ -8301,6 +8368,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1601972340
@@ -8410,6 +8478,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1608553182
@@ -8519,6 +8588,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &1648259534
@@ -8628,6 +8698,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1668353663
@@ -8737,6 +8808,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1689846114
@@ -8846,6 +8918,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1696328006
@@ -8955,6 +9028,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1730599926
@@ -9200,6 +9274,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1849267874
@@ -9309,6 +9384,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &1862925131
@@ -9418,6 +9494,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1871487172
@@ -9527,6 +9604,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1871731320
@@ -9636,6 +9714,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1897655583
@@ -9745,6 +9824,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 0
   restitution: 0
 --- !u!212 &1914815671
@@ -9854,6 +9934,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1929884064
@@ -9963,6 +10044,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 3
   restitution: 0
 --- !u!212 &1946058828
@@ -10072,6 +10154,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &1946272168
@@ -10181,6 +10264,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &1948236363
@@ -10290,6 +10374,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &2000389295
@@ -10399,6 +10484,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 2
   restitution: 0
 --- !u!212 &2026397909
@@ -10508,6 +10594,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &2123464673
@@ -10617,6 +10704,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 1
   restitution: 0
 --- !u!212 &2124961091
@@ -10831,6 +10919,7 @@ MonoBehaviour:
   airFriction: 0
   maxFallSpeed: 0
   spinSpeed: 0
+  physicsEnabled: 0
   blockType: 5
   restitution: 0
 --- !u!212 &2145353085
