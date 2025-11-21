@@ -11,7 +11,7 @@ public class BallController : MonoBehaviour
     public float speedClampMax = 14f;
     public float speedClampMin = 2f;
     public bool launched = false;
-    float minRestitution = 0.95f;
+    float minRestitution = 0.98f;
 
     [Header("Referencias")]
     public Transform paddleTransform;
@@ -34,7 +34,7 @@ public class BallController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 launched = true;
-                velocity = new Vector2(2.5f, 7f); // velocidad inicial
+                velocity = new Vector2(3f, 8f); // velocidad inicial
             }
         }
     }
