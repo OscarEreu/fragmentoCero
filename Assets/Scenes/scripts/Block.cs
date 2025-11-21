@@ -15,8 +15,8 @@ public class Block : MonoBehaviour
     public float maxFallSpeed;
     public float spinSpeed;
 
-    private Vector2 physicsVelocity;
-    private bool physicsEnabled = false;
+    private  Vector2 physicsVelocity;
+    public bool physicsEnabled = false;
 
     public BlockColorType blockType = BlockColorType.Azul;
     int hits = 0;

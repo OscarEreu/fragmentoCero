@@ -91,6 +91,9 @@ public class GameManager : MonoBehaviour
             Block b = allBlocks[i];
             if (b == null) { allBlocks.RemoveAt(i); continue; }
 
+            // Ignorar bloques que ya están cayendo
+            if (b.physicsEnabled) continue;
+
             Bounds blockB = b.GetComponent<SpriteRenderer>().bounds;
             Vector2 circlePos = ball.transform.position;
             float r = ball.radius;
@@ -112,6 +115,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
 
     void CheckBallOutOfBounds()
     {
