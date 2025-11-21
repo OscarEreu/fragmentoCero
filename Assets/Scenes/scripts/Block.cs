@@ -64,7 +64,7 @@ public class Block : MonoBehaviour
 
         Block[] allBlocks = FindObjectsOfType<Block>();
         Dictionary<BlockColorType, List<Block>> eligibleByColor = new Dictionary<BlockColorType, List<Block>>();
-        
+
         foreach (Block block in allBlocks)
         {
             if (!HasBlockBelow(block, allBlocks))
@@ -77,13 +77,13 @@ public class Block : MonoBehaviour
 
         List<BlockColorType> colors = new List<BlockColorType>(eligibleByColor.Keys);
         int minColors = Mathf.Min(3, colors.Count);
-        
+
         for (int i = 0; i < minColors; i++)
         {
             int idx = Random.Range(0, colors.Count);
             BlockColorType color = colors[idx];
             colors.RemoveAt(idx);
-            
+
             List<Block> colorBlocks = eligibleByColor[color];
             if (colorBlocks.Count > 0)
             {
@@ -161,79 +161,69 @@ public class Block : MonoBehaviour
 
         hits++;
 
-        // --- SISTEMA DE RESORTE ---
+        // --- BLOQUES CON RESORTE ---
         if (hasSpring && !springDestroyed)
         {
-            // Para bloques con resorte, solo verificamos golpes después del sistema de resorte
             if (springActive)
             {
-                // Ya está oscilando
                 if (Mathf.Abs(springVelocity) > 0.05f || Mathf.Abs(springDisplacement) > 0.05f)
                 {
-                    // Está oscilando activamente - CAER
                     springActive = false;
                     springDestroyed = true;
-                    ball.velocity *= restitution;
                     ActivatePhysics();
-                    return;
                 }
                 else
                 {
-                    // Se detuvo - REACTIVAR
                     springDisplacement = 0f;
                     springVelocity = -4f;
-                    ball.velocity *= restitution;
-                    return;
                 }
             }
             else
             {
-                // PRIMER TOQUE - ACTIVAR
                 springActive = true;
                 springBaseY = transform.position.y;
                 springDisplacement = 0f;
                 springVelocity = -4f;
-                ball.velocity *= restitution;
-                return;
             }
+
+            ball.velocity *= Mathf.Max(restitution, 0.95f);
+            return;
         }
 
-        // --- BLOQUES NORMALES ---
-        
-        // Aplicar efectos según el color
-        switch (blockType)
+        // --- BLOQUES NORMALES (solo si no caen) ---
+        if (!physicsEnabled)
         {
-            case BlockColorType.Azul:
-                ball.GetComponent<SpriteRenderer>().color = sr.color;
-                break;
-            case BlockColorType.Amarillo:
-                StabilizeSpeed(ball);
-                StartCoroutine(BlinkBall(ball));
-                break;
-            case BlockColorType.Naranja:
-                ball.velocity += Vector2.down * 1.2f;
-                break;
-            case BlockColorType.Rojo:
-                ball.velocity *= 1.20f;
-                break;
-            case BlockColorType.Morado:
-                ball.velocity += Vector2.down * 1.5f;
-                break;
+            switch (blockType)
+            {
+                case BlockColorType.Azul:
+                    ball.GetComponent<SpriteRenderer>().color = sr.color;
+                    break;
+
+                case BlockColorType.Amarillo:
+                    ball.velocity = ball.velocity.normalized * Mathf.Max(ball.velocity.magnitude, 8f);
+                    StartCoroutine(BlinkBall(ball));
+                    break;
+
+                case BlockColorType.Naranja:
+                    ball.velocity += Vector2.down * 1.2f;
+                    break;
+
+                case BlockColorType.Rojo:
+                    ball.velocity *= 1.20f;
+                    break;
+
+                case BlockColorType.Morado:
+                    ball.velocity += Vector2.down * 1.5f;
+                    break;
+            }
+
+            ball.velocity *= Mathf.Max(restitution, 0.95f);
         }
 
-        ball.velocity *= restitution;
-
-        // Solo cae si ha recibido los golpes requeridos
         if (hits >= hitsRequired)
         {
             ActivatePhysics();
         }
-    }
-
-    void StabilizeSpeed(BallController ball)
-    {
-        float s = ball.velocity.magnitude;
-        ball.velocity = ball.velocity.normalized * Mathf.Lerp(s, 8f, 0.5f);
     }
 
     IEnumerator BlinkBall(BallController ball)
@@ -257,22 +247,14 @@ public class Block : MonoBehaviour
 
     void Update()
     {
-        // --- OSCILACIÓN MASA-RESORTE (Método de Euler) ---
+        // --- OSCILACIÓN MASA-RESORTE ---
         if (springActive)
         {
             float dt = Time.deltaTime;
-            
-            // Euler: F = -kx - cv
             float accel = (-k * springDisplacement - c * springVelocity);
-            
             springVelocity += accel * dt;
             springDisplacement += springVelocity * dt;
-            
-            transform.position = new Vector3(
-                transform.position.x,
-                springBaseY + springDisplacement,
-                transform.position.z
-            );
+            transform.position = new Vector3(transform.position.x, springBaseY + springDisplacement, transform.position.z);
             return;
         }
 

@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     void CheckBallOutOfBounds()
     {
         Rect bounds = ball.CameraBounds();

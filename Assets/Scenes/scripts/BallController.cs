@@ -11,6 +11,7 @@ public class BallController : MonoBehaviour
     public float speedClampMax = 14f;
     public float speedClampMin = 2f;
     public bool launched = false;
+    float minRestitution = 0.95f;
 
     [Header("Referencias")]
     public Transform paddleTransform;
@@ -93,7 +94,7 @@ public class BallController : MonoBehaviour
         velocity = velocity - 2f * Vector2.Dot(velocity, contactNormal) * contactNormal;
 
         // Aplica rebote segun restitucion
-        velocity *= restitution;
+        velocity *= Mathf.Max(restitution, minRestitution);
 
         // Pequena correccion para evitar "pegado"
         if (Mathf.Abs(Vector2.Dot(velocity.normalized, contactNormal)) < 0.01f)
