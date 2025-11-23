@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e151bda39fe6a64c8ced3d220756e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector
-  levelName: Nivel
+  levelName: Nivel3
   levelNumber: 3
   scoreRequired: 7175
   lockImage: {fileID: 536476318}

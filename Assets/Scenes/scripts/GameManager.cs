@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         if (levelName == "Nivel2" && score >= 7175)
             victory = true;
 
-        if (levelName == "Nivel3" && score >= 15000)
+        if (levelName == "Nivel3" && score >= 18350)
             victory = true;
 
         if (victory)
@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
     public void OnPowerupCollected(Powerup p)
     {
         Debug.Log("Powerup collected");
-        AddScore(100);
+        //AddScore(100);
     }
     [ContextMenu("🗑 Reset PlayerPrefs")]
     public void ResetPrefs()
