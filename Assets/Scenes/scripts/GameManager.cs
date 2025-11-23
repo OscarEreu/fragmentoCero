@@ -1,11 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Level Info")]
+   
     [Header("References")]
     public BallController ball;
     public PaddleController paddle;
@@ -54,7 +57,7 @@ public class GameManager : MonoBehaviour
         if (timeRemaining <= 0)
         {
             timeRemaining = 0;
-            LevelEnd();
+            LevelEnd(false);
         }
 
         UpdateTimerUI();
@@ -114,6 +117,33 @@ public class GameManager : MonoBehaviour
                 b.OnHit(ball);
             }
         }
+
+        // LÓGICA DE VICTORIA POR SCORE
+        CheckVictoryByScore();
+    }
+
+    void CheckVictoryByScore()
+    {
+        if (!levelActive) return;
+
+        string levelName = SceneManager.GetActiveScene().name;
+
+        bool victory = false;
+
+        if (levelName == "Nivel1" && score >= 3275)
+            victory = true;
+
+        if (levelName == "Nivel2" && score >= 7175)
+            victory = true;
+
+        if (levelName == "Nivel3" && score >= 15000)
+            victory = true;
+
+        if (victory)
+        {
+            Debug.Log("✔ Victoria por score en " + levelName);
+            LevelEnd(true);
+        }
     }
 
 
@@ -133,8 +163,9 @@ public class GameManager : MonoBehaviour
             if (lives <= 0)
             {
                 Debug.Log("GAME OVER");
-                LevelEnd();
+                LevelEnd(false);
             }
+
         }
     }
 
@@ -161,11 +192,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void LevelEnd()
+    void LevelEnd(bool victory)
     {
         levelActive = false;
-        Debug.Log("Level finished or time over");
-        // You can load another scene or show a panel here
+        Debug.Log("Level finished");
+
+        string currentLevel = SceneManager.GetActiveScene().name;
+
+        // Guardar score por nivel
+        PlayerPrefs.SetInt("Score_Level_" + currentLevel, score);
+
+        // Guardar datos para la pantalla final
+        PlayerPrefs.SetInt("LastScore", score);
+        PlayerPrefs.SetInt("LastVictory", victory ? 1 : 0);
+        PlayerPrefs.SetString("LastLevel", currentLevel);
+
+        PlayerPrefs.Save();
+
+        // Ir a la escena final
+        SceneManager.LoadScene("LevelEndScene");
     }
 
     public void OnPowerupCollected(Powerup p)
@@ -173,4 +218,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Powerup collected");
         AddScore(100);
     }
+    [ContextMenu("🗑 Reset PlayerPrefs")]
+    public void ResetPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("🔁 PlayerPrefs borrados para pruebas.");
+    }
+
 }

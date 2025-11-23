@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0a9ec268e66ee4b4387eb7272b325f5c
+guid: 3cadbf6f77bc24a41b102904c4f72e0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6791505491490131505
-    second: fondoSelect_0
+      213: 7758467811241706935
+    second: fondoPausa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondoSelect_0
+      name: fondoPausa_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13e4266f246404e50800000000000000
-      internalID: 6791505491490131505
+      spriteID: 7b54d524e5d9bab60800000000000000
+      internalID: 7758467811241706935
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fondoSelect_0: 6791505491490131505
+      fondoPausa_0: 7758467811241706935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
