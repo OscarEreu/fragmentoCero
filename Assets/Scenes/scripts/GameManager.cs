@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public SonidoManager sonidoManager;
+    public bool launched = false; //sonido despues de lanzarse del padel
+
     [Header("Level Info")]
    
     [Header("References")]
@@ -84,6 +87,9 @@ public class GameManager : MonoBehaviour
             Vector2 paddleNormal = paddle.GetCollisionNormal(closest);
             Vector2 finalNormal = (normal + paddleNormal).normalized;
             ball.ResolveCollision(finalNormal, 0.9f, closest, penetration);
+
+            if (ball.launched)
+                sonidoManager.playPaddle();
         }
     }
 
@@ -114,6 +120,7 @@ public class GameManager : MonoBehaviour
                 Vector2 normal = dist > 0.0001f ? diff.normalized : Vector2.up;
                 float penetration = r - dist;
                 ball.ResolveCollision(normal, b.restitution, closest, penetration);
+                sonidoManager.playBloque();
                 b.OnHit(ball);
             }
         }
@@ -216,7 +223,7 @@ public class GameManager : MonoBehaviour
     public void OnPowerupCollected(Powerup p)
     {
         Debug.Log("Powerup collected");
-        //AddScore(100);
+        
     }
     [ContextMenu("🗑 Reset PlayerPrefs")]
     public void ResetPrefs()
